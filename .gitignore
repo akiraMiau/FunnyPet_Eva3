@@ -11,3 +11,6 @@ __pycache__/
 # Configuración local de Django
 *.sqlite3
 media/
+
+# Variables de entorno
+.env
