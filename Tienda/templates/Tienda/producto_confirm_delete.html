@@ -1,0 +1,26 @@
+{% extends 'Tienda/base.html' %}
+
+{% block title %}Eliminar Producto - FunnyPet{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-danger">
+            <div class="card-body p-5 text-center">
+                <h2 class="text-danger mb-4">¿Estás seguro?</h2>
+                <p class="fs-5 text-secondary">Estás a punto de eliminar permanentemente el producto:</p>
+                <h3 class="text-dark fw-bold mb-4">"{{ producto.nombre }}"</h3>
+                <p class="text-muted small">Esta acción no se puede deshacer y se borrará de la base de datos de FunnyPet.</p>
+                
+                <form method="post" class="mt-4">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="{% url 'detalle_producto' producto.pk %}" class="btn btn-secondary px-4">Cancelar</a>
+                        <button type="submit" class="btn btn-danger px-4">Sí, eliminar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

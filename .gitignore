@@ -1,0 +1,13 @@
+# Entorno virtual
+.venv/
+venv/
+ENV/
+
+# Python / Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Configuración local de Django
+*.sqlite3
+media/
